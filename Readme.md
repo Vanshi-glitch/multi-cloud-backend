@@ -6,6 +6,16 @@
 
 ---
 
+## 🔗 Live Demo Links
+
+- 🔵 **Frontend (AWS S3)**:  
+  [http://multi-cloud-frontend-vanshika.s3-website.ap-south-1.amazonaws.com](http://multi-cloud-frontend-vanshika.s3-website.ap-south-1.amazonaws.com)
+
+- 🟠 **Backend (Azure App Service)**:  
+  [https://multi-cloud-backend.azurewebsites.net/api](https://vanshika-flask-app-asfahuh6azazg9hk.northeurope-01.azurewebsites.net)
+
+---
+
 ## 🎯 Objective
 
 To design and implement a multi-cloud architecture where:
