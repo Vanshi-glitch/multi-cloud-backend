@@ -10,7 +10,7 @@ mood_responses = {
     "angry": {"emoji": "😠", "message": "Take a deep breath and sip some chai 🍵"},
 }
 
-@app.route('/', methods=['POST'])
+@app.route('/', method=['POST'])
 def get_mood_response():
     data = request.get_json()
     mood = data.get("mood", "").lower()
