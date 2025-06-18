@@ -1,13 +1,72 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <title>Multi-Cloud App</title>
+  <title>Emoji Mood Generator 😄</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      text-align: center;
+      background-color: #fef8e7;
+      padding: 40px;
+      color: #333;
+    }
+    h1 {
+      color: #f57f17;
+    }
+    button {
+      margin: 10px;
+      padding: 12px 20px;
+      font-size: 18px;
+      border: none;
+      border-radius: 10px;
+      background-color: #ffd54f;
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+    button:hover {
+      transform: scale(1.1);
+    }
+    #response {
+      margin-top: 30px;
+      font-size: 24px;
+    }
+    #emoji {
+      font-size: 48px;
+    }
+  </style>
 </head>
 <body>
-  <h1>Welcome to My Multi-Cloud App Frontend</h1>
-  <p>This is hosted on AWS S3 Static Website.</p>
-  <p>Backend is hosted on Azure App Service.</p>
-  <a href="https://vanshika-flask-app-asfahuh6azazg9hk.northeurope-01.azurewebsites.net/api">Call Backend</a>
+  <h1>🧠 How Are You Feeling Today?</h1>
+  <div>
+    <button onclick="sendMood('happy')">😊 Happy</button>
+    <button onclick="sendMood('sad')">😢 Sad</button>
+    <button onclick="sendMood('excited')">🤩 Excited</button>
+    <button onclick="sendMood('bored')">😐 Bored</button>
+    <button onclick="sendMood('angry')">😠 Angry</button>
+  </div>
+
+  <div id="response">
+    <p id="message">Select a mood above to see your result!</p>
+    <div id="emoji"></div>
+  </div>
+
+  <script>
+    function sendMood(mood) {
+      fetch('https://multi-cloud-backend.azurewebsites.net/api/mood', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ mood: mood })
+      })
+      .then(response => response.json())
+      .then(data => {
+        document.getElementById("message").innerText = data.message;
+        document.getElementById("emoji").innerText = data.emoji;
+      })
+      .catch(err => {
+        document.getElementById("message").innerText = "Something went wrong!";
+        document.getElementById("emoji").innerText = "❌";
+      });
+    }
+  </script>
 </body>
 </html>
