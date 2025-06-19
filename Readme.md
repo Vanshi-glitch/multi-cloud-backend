@@ -20,7 +20,7 @@ Users can select a mood and receive an emoji-based response with a motivational 
 
 - ⚙️ **Backend (Azure App Service)**  
   [https://vanshika-flask-app-asfahuh6azazg9hk.northeurope-01.azurewebsites.net](https://vanshika-flask-app-asfahuh6azazg9hk.northeurope-01.azurewebsites.net)
-
+(which is connected to frontend emoji's)
 ---
 
 ## 🎯 Objective
