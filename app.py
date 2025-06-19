@@ -1,21 +1,23 @@
 from flask import Flask, request, jsonify
+from flask_cors import CORS
 
 app = Flask(__name__)
+CORS(app)  # ← Enable CORS for all routes
 
 mood_responses = {
-    "happy": {"emoji": "😄", "message": "That’s awesome! Spread the joy!"},
-    "sad": {"emoji": "😢", "message": "Here’s a hug 🤗 — better days are ahead!"},
-    "excited": {"emoji": "🤩", "message": "Woohoo! Keep the energy flowing!"},
-    "bored": {"emoji": "😐", "message": "Why not try something creative today?"},
-    "angry": {"emoji": "😠", "message": "Take a deep breath and sip some chai 🍵"}
+    "happy": {"emoji": "😊", "message": "You're shining! 🌞"},
+    "sad": {"emoji": "🥺", "message": "Sending virtual hugs 🤗"},
+    "excited": {"emoji": "🥳", "message": "Woohoo! Stay hyped! 🔥"},
+    "bored": {"emoji": "😐", "message": "Time to do something fun 🎨"},
+    "angry": {"emoji": "😡", "message": "Breathe in... breathe out 🌬️"}
 }
 
 @app.route('/', methods=['POST'])
 def get_mood_response():
     data = request.get_json()
     mood = data.get("mood", "").lower()
-    response = mood_responses.get(mood, {"emoji": "❓", "message": "Hmm, that’s a new one!"})
+    response = mood_responses.get(mood, {"emoji": "❓", "message": "Hmm, never heard of that mood!"})
     return jsonify(response)
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     app.run()
