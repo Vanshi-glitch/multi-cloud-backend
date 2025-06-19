@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <meta charset="UTF-8">
   <title>Emoji Mood Generator 😄</title>
   <style>
     body {
@@ -32,6 +33,7 @@
     }
     #emoji {
       font-size: 48px;
+      margin-top: 10px;
     }
   </style>
 </head>
@@ -52,7 +54,7 @@
 
   <script>
     function sendMood(mood) {
-      fetch('https://vanshika-flask-app-asfahuh6azazg9hk.northeurope-01.azurewebsites.net/', {
+      fetch('https://vanshika-flask-app-asfahuh6azazg9hk.northeurope-01.azurewebsites.net', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ mood: mood })
@@ -62,9 +64,10 @@
         document.getElementById("message").innerText = data.message;
         document.getElementById("emoji").innerText = data.emoji;
       })
-      .catch(err => {
+      .catch(error => {
         document.getElementById("message").innerText = "Something went wrong!";
         document.getElementById("emoji").innerText = "❌";
+        console.error(error);
       });
     }
   </script>
