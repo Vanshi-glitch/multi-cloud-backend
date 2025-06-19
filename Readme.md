@@ -5,15 +5,22 @@
 **Cloud Providers**: Microsoft Azure (Backend) + Amazon AWS (Frontend)
 
 ---
+# 🧠 Emoji Mood Generator (Multi-Cloud App)
 
-## 🔗 Live Demo Links
+This is a fun and interactive project that demonstrates a **multi-cloud architecture** using **AWS S3** for the frontend and **Azure App Service** for the backend.
 
-- 🔵 **Frontend (AWS S3)**:  
+Users can select a mood and receive an emoji-based response with a motivational message. This showcases how two cloud platforms can work together in real time.
+
+---
+
+## 🔗 Live Demo
+
+- 🎨 **Frontend (AWS S3)**  
   [http://multi-cloud-frontend-vanshika.s3-website.ap-south-1.amazonaws.com](http://multi-cloud-frontend-vanshika.s3-website.ap-south-1.amazonaws.com)
 
-- 🟠 **Backend (Azure App Service)**:  
-  [https://multi-cloud-backend.azurewebsites.net/api](https://vanshika-flask-app-asfahuh6azazg9hk.northeurope-01.azurewebsites.net)
-
+- ⚙️ **Backend (Azure App Service)**  
+  [https://vanshika-flask-app-asfahuh6azazg9hk.northeurope-01.azurewebsites.net](https://vanshika-flask-app-asfahuh6azazg9hk.northeurope-01.azurewebsites.net)
+(which is connected to frontend emoji's)
 ---
 
 ## 🎯 Objective
@@ -36,12 +43,45 @@ This setup demonstrates **interoperability** between two major cloud platforms u
 [Backend - Azure App Service]
 
 
-- **Frontend**: Hosted on AWS S3 (HTML/JS)
-- **Backend**: Flask API deployed on Azure App Service
-- **Integration**: Frontend calls Azure API over HTTP
+- **Frontend** (HTML/JS) hosted on **AWS S3 Static Website Hosting**
+- **Backend** (Python Flask API) hosted on **Azure App Service**
+- Communication via **HTTP POST request**
+
+---
 
 🖼️ Architecture Diagram:  
 ![Architecture Diagram](architecture-diagram.png)
+
+---
+
+## 📦 Technologies Used
+
+- Flask (Python)
+- flask-cors for CORS support
+- HTML, CSS, JavaScript
+- AWS S3 (for hosting frontend)
+- Azure App Service (for hosting Flask backend)
+- GitHub (version control & CI deployment)
+
+---
+
+
+
+## 📁 Project Structure
+
+multi-cloud-emoji-mood-app/
+├── backend/
+│ ├── app.py
+│ └── requirements.txt
+├── frontend/
+│ └── index.html
+├── architecture/
+│ └── emoji-architecture.png
+├── screenshots/
+│ └── (UI and deployment screenshots)
+├── Multi Cloud Documentation.docx
+└── README.md
+
 
 ---
 
@@ -57,18 +97,7 @@ This setup demonstrates **interoperability** between two major cloud platforms u
 - Created public S3 bucket with static website hosting
 - Uploaded `index.html`, `style.css`, and JS files
 - Live URL:  
-  🔗 [http://multi-cloud-frontend-vanshika.s3-website.ap-south-1.amazonaws.com](http://multi-cloud-frontend-vanshika.s3-website.ap-south-1.amazonaws.com)
-
----
-
-## 📂 Repository Structure
-multi-cloud-backend/
-├── app.py # Flask backend
-├── requirements.txt # Python dependencies
-├── architecture-diagram.png # Draw.io diagram
-├── Multi Cloud Documentation.docx
-├── README.md
-└── Screenshots
+  🔗 [http://multi-cloud-frontend-vanshika.s3-website.ap-south-1.amazonaws.com](http://multi-cloud-frontend-vanshika.s3-website.ap-south-1.amazonaws.com/)
 
 ---
 
@@ -91,6 +120,32 @@ multi-cloud-backend/
 
 ---
 
+## 📌 Features
+
+- Click a mood → instantly receive an emoji + motivational reply
+- Live communication between AWS and Azure
+- Error-handled frontend and clean UI
+- Modular code and multi-cloud practice
+
+---
+
+## ✅ How It Works
+
+1. User opens AWS S3 hosted site and clicks a mood button
+2. JavaScript sends a **POST** request to Azure Flask backend
+3. Flask returns a JSON response with `emoji` and `message`
+4. Frontend updates the UI live with response
+
+---
+
+## 📚 Learnings
+
+- Setting up static frontend hosting on AWS S3
+- Deploying Flask app to Azure with GitHub integration
+- Handling CORS and cross-origin communication
+- Real-time frontend-backend API interaction
+
+---
 ## ✅ Outcome
 
 Successfully deployed a full-stack web application using a **multi-cloud approach**. Demonstrated smooth integration of services across **Azure and AWS**, with GitHub-driven continuous deployment and public access.
@@ -102,7 +157,4 @@ Successfully deployed a full-stack web application using a **multi-cloud approac
 This project highlights the flexibility and real-world power of using a multi-cloud strategy, enabling deployment resilience, cloud vendor diversity, and platform independence.
 
 ---
-
-
-
 
