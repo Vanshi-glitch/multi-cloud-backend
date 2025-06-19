@@ -70,16 +70,27 @@ This setup demonstrates **interoperability** between two major cloud platforms u
 ## 📁 Project Structure
 
 multi-cloud-emoji-mood-app/
+
 ├── backend/
+
 │ ├── app.py
+
 │ └── requirements.txt
+
 ├── frontend/
+
 │ └── index.html
+
 ├── architecture/
+
 │ └── emoji-architecture.png
+
 ├── screenshots/
+
 │ └── (UI and deployment screenshots)
+
 ├── Multi Cloud Documentation.docx
+
 └── README.md
 
 
