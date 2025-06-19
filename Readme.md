@@ -50,7 +50,7 @@ This setup demonstrates **interoperability** between two major cloud platforms u
 ---
 
 🖼️ Architecture Diagram:  
-![Architecture Diagram](architecture-diagram.png)
+![Architecture Diagram](./architecture/architecture-diagram.png)
 
 ---
 
