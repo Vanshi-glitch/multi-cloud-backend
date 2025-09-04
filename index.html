@@ -53,23 +53,24 @@
   </div>
 
   <script>
-    function sendMood(mood) {
-      fetch('https://vanshika-api-app-beena8bqb5e2fwes.eastasia-01.azurewebsites.net', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ mood: mood })
-      })
-      .then(response => response.json())
-      .then(data => {
-        document.getElementById("message").innerText = data.message;
-        document.getElementById("emoji").innerText = data.emoji;
-      })
-      .catch(error => {
-        document.getElementById("message").innerText = "Something went wrong!";
-        document.getElementById("emoji").innerText = "❌";
-        console.error(error);
-      });
-    }
-  </script>
+  function sendMood(mood) {
+    fetch('https://vanshika-api-app-beena8bqb5e2fwes.eastasia-01.azurewebsites.net/', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ mood: mood })
+    })
+    .then(response => response.json())
+    .then(data => {
+      document.getElementById("message").innerText = data.message;
+      document.getElementById("emoji").innerText = data.emoji;
+    })
+    .catch(error => {
+      document.getElementById("message").innerText = "Something went wrong!";
+      document.getElementById("emoji").innerText = "❌";
+      console.error("Fetch error:", error);
+    });
+  }
+</script>
+
 </body>
 </html>
